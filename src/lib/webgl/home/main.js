@@ -47,26 +47,6 @@ export default class Experience {
 		this.scene.add(this.mouseSphere);
 	}
 
-	setText() {
-		// Create:
-		const myText = new Text();
-		myText.material = new THREE.MeshStandardMaterial({
-			color: '#c0c0c0'
-		});
-
-		myText.receiveShadow = true;
-		this.scene.add(myText);
-
-		// Set properties to configure:
-		myText.text = '734 000$';
-		myText.fontSize = 5;
-		myText.position.z = -2;
-		myText.anchorX = 'center';
-		myText.anchorY = 'middle';
-
-		myText.sync();
-	}
-
 	setPhysics() {
 		this.world = new CANNON.World({
 			gravity: new CANNON.Vec3(0, 5, 0) // m/s²
@@ -169,11 +149,12 @@ export default class Experience {
 	}
 
 	events() {
-		this.resize = this.resize.bind(this);
-		window.addEventListener('resize', this.resize);
+		this.resizeEvent = this.resize.bind(this);
+		window.addEventListener('resize', this.resizeEvent);
 
-		window.addEventListener('pointermove', this.pointerMove.bind(this));
-		window.addEventListener('touchmove', this.pointerMove.bind(this));
+		this.pointermoveEvent = this.pointerMove.bind(this);
+		window.addEventListener('pointermove', this.pointermoveEvent);
+		window.addEventListener('touchmove', this.pointermoveEvent);
 	}
 
 	pointerMove(e) {
@@ -238,8 +219,7 @@ export default class Experience {
 		 */
 		this.previousTime = 0;
 
-		this.tick = this.tick.bind(this);
-		requestAnimationFrame(this.tick);
+		this.myReq = requestAnimationFrame(() => this.tick());
 	}
 
 	tick(t) {
@@ -254,9 +234,17 @@ export default class Experience {
 		this.updateRaycast();
 		this.updatePhysics();
 
+		console.log('tick');
+
 		// this.stats.end();
-		requestAnimationFrame(this.tick);
+		this.myReq = requestAnimationFrame(() => this.tick());
+	}
+
+	destroy() {
+		window.removeEventListener('resize', this.resizeEvent);
+		window.removeEventListener('pointermove', this.pointermoveEvent);
+		window.removeEventListener('touchmove', this.pointermoveEvent);
+
+		cancelAnimationFrame(this.myReq);
 	}
 }
-
-const experience = new Experience(document.querySelector('canvas'));
