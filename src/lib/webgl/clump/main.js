@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import * as CANNON from 'cannon-es';
 import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
+// import Stats from './Stats';
 
 export default class Experience {
 	constructor(canvas) {
@@ -65,7 +66,7 @@ export default class Experience {
 		for (let i = 0; i < 20; i++) {
 			this.createSphere(1, {
 				x: (Math.random() - 0.5) * 20,
-				y: -10 - Math.random() * 10,
+				y: -15 - Math.random() * 10,
 				z: (Math.random() - 0.5) * 10
 			});
 		}
@@ -86,7 +87,7 @@ export default class Experience {
 			obj.mesh.quaternion.copy(obj.body.quaternion);
 
 			obj.body.applyForce(
-				new CANNON.Vec3(-obj.mesh.position.x, -obj.mesh.position.y, -obj.mesh.position.z)
+				new CANNON.Vec3(-obj.mesh.position.x, -obj.mesh.position.y - 1, -obj.mesh.position.z)
 			);
 		});
 
@@ -190,17 +191,15 @@ export default class Experience {
 		this.camera.updateProjectionMatrix();
 
 		this.renderer.setSize(window.innerWidth, window.innerHeight);
-		this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 	}
 
 	setRenderer() {
 		this.renderer = new THREE.WebGLRenderer({
 			canvas: this.canvas,
-			antialias: true,
-			alpha: true
+			antialias: true
 		});
+		this.renderer.setClearColor('white');
 		this.renderer.setSize(window.innerWidth, window.innerHeight);
-		this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 		this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
 		this.renderer.toneMappingExposure = 1.5;
 		this.renderer.shadowMap.enabled = true;
@@ -233,8 +232,6 @@ export default class Experience {
 
 		this.updateRaycast();
 		this.updatePhysics();
-
-		console.log('tick');
 
 		// this.stats.end();
 		this.myReq = requestAnimationFrame(() => this.tick());

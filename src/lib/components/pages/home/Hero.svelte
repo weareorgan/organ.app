@@ -1,10 +1,10 @@
 <script>
-	import Canvas from '$lib/components/pages/home/Canvas.svelte';
+	import Clump from '$lib/components/pages/home/Clump.svelte';
 </script>
 
-<Canvas />
-
 <div class="hero">
+	<Clump />
+
 	<div class="container">
 		<h1>Organ</h1>
 		<h2>The web studio that builds in public</h2>
@@ -28,7 +28,8 @@
 
 <style>
 	.hero {
-		height: 100vh;
+		height: 100svh;
+		width: 100vw;
 		position: relative;
 		display: flex;
 		justify-content: center;
@@ -100,5 +101,14 @@
 	svg {
 		margin-top: 50px;
 		cursor: pointer;
+	}
+
+	@media (max-width: 768px) {
+		.container {
+			bottom: 20px;
+		}
+		svg {
+			/* margin-top: 20px; */
+		}
 	}
 </style>

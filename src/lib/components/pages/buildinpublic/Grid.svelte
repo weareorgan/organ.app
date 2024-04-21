@@ -4,7 +4,7 @@
 	let canvas, instance;
 
 	onMount(async () => {
-		const Experience = (await import('../../../webgl/home/main.js')).default;
+		const Experience = (await import('../../../webgl/grid/main.js')).default;
 
 		instance = new Experience(canvas);
 
@@ -12,7 +12,6 @@
 	});
 
 	onDestroy(() => {
-		console.log('here');
 		if (instance) instance.destroy();
 	});
 </script>
@@ -21,7 +20,10 @@
 
 <style>
 	canvas {
-		position: absolute;
 		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		outline: none;
 	}
 </style>

@@ -16,7 +16,7 @@
 		backdrop-filter: blur(10px);
 		position: fixed;
 		top: 0;
-		width: 100%;
+		width: 100vw;
 		z-index: 999;
 
 		& a {
@@ -24,6 +24,14 @@
 			&:hover {
 				color: var(--grey2);
 			}
+		}
+	}
+
+	@media (max-width: 768px) {
+		nav {
+			justify-content: space-between;
+			gap: 0;
+			padding: 0 20px;
 		}
 	}
 </style>
