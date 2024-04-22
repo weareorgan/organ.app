@@ -20,10 +20,12 @@
 
 <style>
 	canvas {
+		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100vw;
 		height: 100vh;
 		outline: none;
+		z-index: -99;
 	}
 </style>

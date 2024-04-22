@@ -25,8 +25,15 @@
 	font-family: 'Inter', sans-serif;
 }
 
+html,
+body {
+	min-width: 100%;
+}
+
 * {
 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
@@ -41,4 +48,14 @@ a,
 button {
 	all: unset;
 	cursor: pointer;
+}
+
+a.link {
+	font-weight: 600;
+	text-decoration-line: underline;
+	color: var(--blue);
+}
+
+strong {
+	font-weight: 600;
 }

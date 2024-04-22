@@ -1,5 +1,7 @@
 <script>
-	import Grid from '$lib/components/pages/buildinpublic/Grid.svelte';
+	import Hero from '$lib/components/pages/buildinpublic/Hero.svelte';
 </script>
 
-<Grid />
+<div class="bip">
+	<Hero />
+</div>
