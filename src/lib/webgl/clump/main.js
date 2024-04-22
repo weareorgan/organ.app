@@ -243,5 +243,7 @@ export default class Experience {
 		window.removeEventListener('touchmove', this.pointermoveEvent);
 
 		cancelAnimationFrame(this.myReq);
+
+		this.renderer.dispose();
 	}
 }

@@ -116,5 +116,6 @@ export default class Experience {
 		window.removeEventListener('resize', this.resize);
 
 		cancelAnimationFrame(this.myReq);
+		this.renderer.dispose();
 	}
 }
