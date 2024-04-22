@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import vertex from './shaders/vertex.glsl?raw';
 import fragment from './shaders/fragment.glsl?raw';
-// import Stats from './Stats';
+// import Stats from 'stats.js';
 
 export default class Experience {
 	constructor(canvas) {

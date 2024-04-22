@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import * as CANNON from 'cannon-es';
 import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
-// import Stats from './Stats';
+// import Stats from 'stats.js';
 
 export default class Experience {
 	constructor(canvas) {
