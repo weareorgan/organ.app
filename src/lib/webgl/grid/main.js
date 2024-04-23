@@ -77,6 +77,7 @@ export default class Experience {
 			antialias: true
 		});
 		this.renderer.setSize(window.innerWidth, window.innerHeight);
+		this.renderer.setPixelRatio(1);
 		this.renderer.setClearColor('white');
 	}
 

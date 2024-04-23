@@ -18,31 +18,30 @@ export default class Experience {
 		// this.scene.background = environmentMap;
 		this.scene.environment = environmentMap;
 
+		this.setRenderer();
 		this.setMesh();
 		this.setPhysics();
 		this.setCamera();
 		this.setLights();
 		this.raycast();
 		this.events();
-		this.setRenderer();
 		this.update();
 	}
 
 	setMesh() {
+		const texture = new THREE.TextureLoader().load('/webgl/cross.webp');
+
 		this.sphere = new THREE.Mesh(
 			new THREE.SphereGeometry(1, 32, 32),
 			new THREE.MeshStandardMaterial({
-				map: new THREE.TextureLoader().load('/webgl/cross.webp'),
+				map: texture,
 				metalness: 0.1,
-				roughness: 0.2,
-				envMapIntensity: 0
+				roughness: 0.2
 			})
 		);
-		this.sphere.castShadow = true;
-		this.sphere.receiveShadow = true;
 
 		this.mouseSphere = new THREE.Mesh(
-			new THREE.SphereGeometry(3, 32, 32),
+			new THREE.SphereGeometry(3, 12, 12),
 			new THREE.MeshStandardMaterial({ color: 'red', visible: false })
 		);
 
@@ -136,7 +135,6 @@ export default class Experience {
 
 	setLights() {
 		const directional = new THREE.DirectionalLight('white', 1);
-		directional.castShadow = true;
 		directional.position.set(10, 10, 10);
 
 		const ambiant = new THREE.AmbientLight('white', 1);
@@ -201,9 +199,9 @@ export default class Experience {
 		});
 		this.renderer.setClearColor('white');
 		this.renderer.setSize(window.innerWidth, window.innerHeight);
+		this.renderer.setPixelRatio(1);
 		this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
 		this.renderer.toneMappingExposure = 2;
-		this.renderer.shadowMap.enabled = true;
 	}
 
 	update() {
