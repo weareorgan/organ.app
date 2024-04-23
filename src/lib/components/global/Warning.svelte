@@ -20,12 +20,13 @@
 		gap: 10px;
 
 		border-radius: 6px;
-		border: 1px solid var(--orange);
-		background: rgba(255, 149, 0, 0.05);
+		border: 1px solid var(--grey);
+		/* background: rgba(255, 149, 0, 0.05); */
+
+		background-color: var(--grey3);
 	}
 
 	.title {
-		color: var(--orange);
 		font-size: 18px;
 		font-weight: 600;
 	}
