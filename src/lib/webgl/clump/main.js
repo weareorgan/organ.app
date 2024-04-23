@@ -1,7 +1,6 @@
 import * as THREE from 'three';
 import * as CANNON from 'cannon-es';
-import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
-// import Stats from 'stats.js';
+import Stats from 'stats.js';
 
 export default class Experience {
 	constructor(canvas) {
@@ -11,11 +10,13 @@ export default class Experience {
 
 		this.scene = new THREE.Scene();
 
-		const rgbeLoader = new RGBELoader();
-		rgbeLoader.load('/webgl/env.hdr', (environmentMap) => {
-			environmentMap.mapping = THREE.EquirectangularReflectionMapping;
-			this.scene.environment = environmentMap;
-		});
+		const textureLoader = new THREE.TextureLoader();
+
+		const environmentMap = textureLoader.load('/webgl/env.webp');
+		environmentMap.mapping = THREE.EquirectangularReflectionMapping;
+		environmentMap.colorSpace = THREE.SRGBColorSpace;
+		// this.scene.background = environmentMap;
+		this.scene.environment = environmentMap;
 
 		this.setMesh();
 		this.setPhysics();
@@ -31,10 +32,10 @@ export default class Experience {
 		this.sphere = new THREE.Mesh(
 			new THREE.SphereGeometry(1, 32, 32),
 			new THREE.MeshStandardMaterial({
-				map: new THREE.TextureLoader().load('/webgl/cross.jpg'),
+				map: new THREE.TextureLoader().load('/webgl/cross.webp'),
 				metalness: 0.1,
 				roughness: 0.2,
-				envMapIntensity: 2
+				envMapIntensity: 0
 			})
 		);
 		this.sphere.castShadow = true;
@@ -201,7 +202,7 @@ export default class Experience {
 		this.renderer.setClearColor('white');
 		this.renderer.setSize(window.innerWidth, window.innerHeight);
 		this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
-		this.renderer.toneMappingExposure = 1.5;
+		this.renderer.toneMappingExposure = 2;
 		this.renderer.shadowMap.enabled = true;
 	}
 
@@ -209,9 +210,9 @@ export default class Experience {
 		/**
 		 * Stats
 		 */
-		// this.stats = new Stats();
-		// this.stats.showPanel(0);
-		// document.body.appendChild(this.stats.dom);
+		this.stats = new Stats();
+		this.stats.showPanel(0);
+		document.body.appendChild(this.stats.dom);
 
 		/**
 		 * RAF
@@ -222,7 +223,7 @@ export default class Experience {
 	}
 
 	tick(t) {
-		// this.stats.begin();
+		this.stats.begin();
 
 		this.elapsedTime = t / 1000;
 		this.deltaTime = this.elapsedTime - this.previousTime;
@@ -233,7 +234,7 @@ export default class Experience {
 		this.updateRaycast();
 		this.updatePhysics();
 
-		// this.stats.end();
+		this.stats.end();
 		this.myReq = requestAnimationFrame(() => this.tick());
 	}
 

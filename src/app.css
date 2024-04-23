@@ -25,9 +25,12 @@
 	font-family: 'Inter', sans-serif;
 }
 
-html,
-body {
-	min-width: 100%;
+/* reset */
+a,
+button {
+	all: unset;
+	cursor: pointer;
+	box-sizing: border-box;
 }
 
 * {
@@ -36,18 +39,14 @@ body {
 	padding: 0;
 }
 
+/* css */
+
 body {
 	color: var(--black);
 	background-color: white;
 	margin: 0;
 	font-size: 13px;
 	-webkit-font-smoothing: antialiased;
-}
-
-a,
-button {
-	all: unset;
-	cursor: pointer;
 }
 
 a.link {
