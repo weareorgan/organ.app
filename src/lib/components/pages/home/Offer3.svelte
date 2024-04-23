@@ -3,7 +3,7 @@
 </script>
 
 <div class="offer-3">
-	<h3>Fast Delivery with Real-Time Tracking</h3>
+	<h2>Fast Delivery with Real-Time Tracking</h2>
 
 	<Accordion title={'Track our adherence to project deadlines.'}
 		>We prioritize meeting project deadlines consistently and efficiently, <a

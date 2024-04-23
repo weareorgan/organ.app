@@ -4,7 +4,7 @@
 </script>
 
 <div class="offer-1">
-	<h3>Want to Be at the Top of Google Results?</h3>
+	<h2>Want to Be at the Top of Google Results?</h2>
 
 	<Accordion title={'Explore impressions and performance of our websites.'}>
 		We provide comprehensive insights, including <a

@@ -1,5 +1,6 @@
 <script>
-	export let href, content;
+	export let href = '/',
+		content;
 </script>
 
 <a {href}

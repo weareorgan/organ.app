@@ -22,7 +22,7 @@
 		flex-direction: column;
 	}
 
-	:global(.offer h3) {
+	:global(.offer h2) {
 		font-size: 48px;
 		font-weight: 600;
 		margin-bottom: 25px;

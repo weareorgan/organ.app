@@ -1,10 +1,10 @@
 <script>
 	import Accordion from '../../global/Accordion.svelte';
-	import Tag from '../../global/Tag.svelte';
+	import Sign from '../../global/Sign.svelte';
 </script>
 
 <div class="offer-2">
-	<h3>No Hidden Fees</h3>
+	<h2>No Hidden Fees</h2>
 
 	<Accordion title={'View our pricing transparency.'}>
 		We believe in complete transparency when it comes to pricing. Our detailed breakdowns ensure you
@@ -18,12 +18,12 @@
 		<div class="top">
 			<div>One-time payment</div>
 			<div class="maintain">
-				Maintain your every month <div class="tag"><Tag content={'For Free'} /></div>
+				Maintain your every month <div class="sign"><Sign content={'For Free'} /></div>
 			</div>
 		</div>
 
 		<div class="bottom">
-			Track your website performance anytime you want <div class="tag"><Tag /></div>
+			Track your website performance anytime you want <div class="sign"><Sign /></div>
 		</div>
 
 		<svg
@@ -82,7 +82,7 @@
 				flex-direction: column;
 			}
 
-			& .maintain .tag {
+			& .maintain .sign {
 				position: relative;
 				bottom: 35px;
 			}
@@ -96,7 +96,7 @@
 			flex-direction: column;
 			align-items: center;
 
-			& .tag {
+			& .sign {
 				position: relative;
 				bottom: 35px;
 			}

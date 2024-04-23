@@ -2,10 +2,10 @@
 </script>
 
 <div class="offer-4">
-	<h3>
+	<h2>
 		And... <br />
 		Good Looking Website
-	</h3>
+	</h2>
 
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
