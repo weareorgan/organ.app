@@ -30,4 +30,10 @@
 		font-size: 18px;
 		font-weight: 600;
 	}
+
+	@media (max-width: 680px) {
+		.warning {
+			width: 100%;
+		}
+	}
 </style>

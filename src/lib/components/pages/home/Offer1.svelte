@@ -30,8 +30,24 @@
 		</div>
 
 		<div>
-			<div>More Conversions</div>
 			<div>Better UX</div>
+			<div class="conversion">
+				More Conversions <svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="135"
+					height="26"
+					viewBox="0 0 135 26"
+					fill="none"
+					class="underline"
+				>
+					<path
+						d="M133 7.98775C105.907 6.35787 79.0479 3.31881 51.9058 2.64248C36.3042 2.25371 -10.3528 1.11569 5.09056 3.31063C30.4745 6.91841 56.7093 6.80249 82.2671 9.22863C92.1697 10.1687 101.993 11.4287 111.845 12.7603C115.636 13.2728 118.598 14.1388 112.531 13.8103C85.4525 12.3442 58.515 9.08607 31.4364 7.5105C28.5467 7.34237 19.9853 7.26042 22.7687 8.03547C32.9713 10.8764 43.9168 11.9957 54.3543 13.5717C66.923 15.4695 79.6952 16.6547 92.1591 19.1556C96.6363 20.0539 102.633 20.3342 106.801 22.1623C114.177 25.3973 90.6483 23.4077 82.561 23.26C69.1016 23.0142 55.6577 22.257 42.2098 21.7328"
+						stroke="#007AFF"
+						stroke-width="3"
+						stroke-linecap="round"
+					/>
+				</svg>
+			</div>
 		</div>
 
 		<svg
@@ -116,12 +132,25 @@
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		margin: 100px 0;
+		margin-top: 100px;
+		margin-bottom: 70px;
 
-		& div {
+		& > div {
 			display: flex;
 			justify-content: space-between;
-			padding: 0 50px;
+			padding: 0 100px;
+		}
+
+		& .conversion {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+
+			& svg {
+				position: relative;
+				top: 10px;
+			}
 		}
 
 		& svg {
@@ -130,7 +159,7 @@
 
 		& svg.left {
 			left: 20px;
-			top: 25px;
+			top: 5px;
 		}
 
 		& svg.top-mid {
@@ -140,12 +169,18 @@
 
 		& svg.right {
 			right: 0px;
-			top: 15px;
+			top: 0px;
 		}
 
 		& svg.bottom-mid {
-			left: 330px;
-			bottom: -40px;
+			left: 250px;
+			bottom: -10px;
+		}
+	}
+
+	@media (max-width: 680px) {
+		.illustration > div {
+			padding: 0 30px;
 		}
 	}
 </style>

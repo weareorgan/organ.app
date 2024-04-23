@@ -17,7 +17,7 @@
 		width: 680px;
 		margin: 0 auto;
 		margin-top: 150px;
-		gap: 150px;
+		gap: 100px;
 		display: flex;
 		flex-direction: column;
 	}
@@ -29,10 +29,24 @@
 	}
 
 	:global(.offer .illustration) {
-		/* margin: 100px 0; */
 		width: 100%;
 		font-size: 18px;
 		font-weight: 600;
-		gap: 100px;
+		gap: 70px;
+	}
+
+	@media (max-width: 680px) {
+		.offer {
+			width: 95%;
+		}
+
+		:global(.offer h2) {
+			font-size: 36px;
+			font-weight: 600;
+			margin-bottom: 25px;
+		}
+		:global(.offer .illustration) {
+			font-size: 16px;
+		}
 	}
 </style>

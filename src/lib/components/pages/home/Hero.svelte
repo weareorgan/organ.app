@@ -103,12 +103,9 @@
 		cursor: pointer;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 680px) {
 		.container {
 			bottom: 20px;
-		}
-		svg {
-			/* margin-top: 20px; */
 		}
 	}
 </style>

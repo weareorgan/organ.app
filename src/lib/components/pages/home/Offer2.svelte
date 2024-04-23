@@ -93,12 +93,12 @@
 			justify-content: center;
 			position: relative;
 			right: 15px;
-			flex-direction: column;
+			flex-direction: column-reverse;
 			align-items: center;
+			bottom: 60px;
 
 			& .sign {
 				position: relative;
-				bottom: 35px;
 			}
 		}
 

@@ -27,7 +27,7 @@
 		}
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 680px) {
 		nav {
 			justify-content: space-between;
 			gap: 0;

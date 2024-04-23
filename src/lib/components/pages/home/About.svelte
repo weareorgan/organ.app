@@ -27,13 +27,13 @@
 	</h2>
 
 	<div class="accordions">
-		<Accordion title={'Organ is'}>
+		<Accordion title={'Organ is'} defaultState={'open'}>
 			A web studio specialized in web <strong> design and development </strong>, delivering visually
 			stunning websites optimized for user engagement and performance. Our team crafts scalable,
 			high-speed solutions designed to accelerate business growth and enhance digital presence.</Accordion
 		>
 
-		<Accordion title={'Why we build in public'}>
+		<Accordion title={'Why we build in public'} defaultState={'open'}>
 			We build in public because we believe in the power of transparency and community engagement.
 			This approach allows us to create a genuine and trustful relationship with our audience,
 			<strong
