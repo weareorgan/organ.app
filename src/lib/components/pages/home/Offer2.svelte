@@ -1,5 +1,6 @@
 <script>
 	import Accordion from '../../global/Accordion.svelte';
+	import Tag from '../../global/Tag.svelte';
 </script>
 
 <div class="offer-2">
@@ -16,10 +17,14 @@
 	<div class="illustration">
 		<div class="top">
 			<div>One-time payment</div>
-			<div>Maintain your every month</div>
+			<div class="maintain">
+				Maintain your every month <div class="tag"><Tag content={'For Free'} /></div>
+			</div>
 		</div>
 
-		<div class="bottom">Track your website performance anytime you want</div>
+		<div class="bottom">
+			Track your website performance anytime you want <div class="tag"><Tag /></div>
+		</div>
 
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -59,8 +64,8 @@
 	.illustration {
 		display: flex;
 		flex-direction: column;
-		gap: 100px;
 		position: relative;
+		margin-top: 130px;
 
 		& > div {
 			width: 100%;
@@ -69,6 +74,18 @@
 			display: flex;
 			justify-content: space-between;
 			padding: 0 50px;
+
+			& .maintain {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+			}
+
+			& .maintain .tag {
+				position: relative;
+				bottom: 35px;
+			}
 		}
 
 		& .bottom {
@@ -76,6 +93,13 @@
 			justify-content: center;
 			position: relative;
 			right: 15px;
+			flex-direction: column;
+			align-items: center;
+
+			& .tag {
+				position: relative;
+				bottom: 35px;
+			}
 		}
 
 		& svg {

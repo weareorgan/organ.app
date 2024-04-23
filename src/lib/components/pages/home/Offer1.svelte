@@ -116,6 +116,7 @@
 		position: relative;
 		display: flex;
 		flex-direction: column;
+		margin: 100px 0;
 
 		& div {
 			display: flex;
